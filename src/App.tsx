@@ -123,8 +123,10 @@ function App() {
           onChange={(e) => setArcadeAddress(e.target.value)}
         />
         <div>
-          <p>ETH: {ethBalance.toString()}</p>
-          <p>Lords: {lordsBalance.toString()}</p>
+          <p>ETH: {(parseInt(ethBalance.toString()) / 10 ** 18).toFixed(4)}</p>
+          <p>
+            Lords: {(parseInt(lordsBalance.toString()) / 10 ** 18).toFixed(2)}
+          </p>
         </div>
         <button
           onClick={handleWithdrawal}
